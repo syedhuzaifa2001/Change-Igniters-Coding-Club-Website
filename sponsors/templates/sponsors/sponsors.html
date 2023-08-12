@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block cssLinksAndTitle %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<title>
+ Sponsors - Change Igniters
+</title>
+{% block body %}
+<body style="background-image:linear-gradient(to bottom right, rgb(21, 51, 95), rgb(225, 229, 236))";></body>
+ {% endblock body %}
+ {% endblock cssLinksAndTitle %}
+{% block mainContent %}
+<div id="Sponsors-top">
+  <div
+    class="home-content text-light position-absolute top-50 start-50 translate-middle"
+  >
+    <h1 style="font-size: 45px !important; ">Our Most Valued</h1>
+    <h1 style="font-size: 45px !important; ">Sponsors</h1>
+            
+  </div>
+  
+</div>
+
+<!-- Sponsors Page -->
+<div class="container sponsorsContainer">
+
+<div class="row ">
+<div class="col-12">
+  <div class="main-container">
+    <div class="container cf">
+      <div class="animation-element slide-left testimonial cardPadding">
+        
+        <div class="row featurette d-flex justify-content-between">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">
+              OctDaily Software House
+              <!-- <span class="text-secondary">It’ll blow your mind.</span> -->
+            </h2>
+            <p class="lead">
+              "OctDaily is a leading technology company that helps businesses thrive in the modern world. With their innovative solutions, OctDaily helps companies streamline processes, manage customer relations, and stay on top of industry trends. We are proud to have OctDaily as one of our sponsors and grateful for their support in helping us achieve our goals."
+            </p>
+            <a href="http://octdaily.com/" target="_blank" class='glowing-btn btn'><span class='glowing-txt'>VI<span class='faulty-letter'>S</span>IT WEBSITE</span></a>
+          </div>
+          <div class="col-md-4 SponImgCont">
+            <!-- <div class="content SponImgCont"> -->
+            <img
+              class="img1Spon"
+              src="{{ MEDIA_URL }}static-images/Sponsors/s1.jpg"
+              alt=""
+            />
+            
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+ {% endblock mainContent %}
+{% block jsLinks %}
+<script>
+  $(document).ready(function() {
+
+//window and animation items
+var animation_elements = $.find('.animation-element');
+var web_window = $(window);
+
+//check to see if any animation containers are currently in view
+function check_if_in_view() {
+  //get current window information
+  var window_height = web_window.height();
+  var window_top_position = web_window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+  //iterate through elements to see if its in view
+  $.each(animation_elements, function() {
+
+    //get the element sinformation
+    var element = $(this);
+    var element_height = $(element).outerHeight();
+    var element_top_position = $(element).offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+
+    //check to see if this current container is visible (its viewable if it exists between the viewable space of the viewport)
+    if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+      element.addClass('in-view');
+    } else {
+      element.removeClass('in-view');
+    }
+  });
+
+}
+
+//on or scroll, detect elements in view
+$(window).on('scroll resize', function() {
+    check_if_in_view()
+  })
+  //trigger our scroll event on initial load
+$(window).trigger('scroll');
+
+});
+
+
+</script>
+ {% endblock jsLinks %}

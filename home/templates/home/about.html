@@ -1,0 +1,168 @@
+{% extends "base.html" %} {% block cssLinksAndTitle %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+	rel="stylesheet"
+/>
+<title>About Us - Change Igniters</title>
+{% endblock cssLinksAndTitle %} {% block body %}
+
+<body>
+	{% endblock body %} {% block mainContent %}
+
+	<div id="about-top">
+		<div
+			class="home-content text-light position-absolute top-50 start-50 translate-middle"
+		>
+			<h1>Welcome to Coders Club 2023</h1>
+			<h1 class="fs-1">About Us</h1>
+		</div>
+	</div>
+	<section class="about-section">
+		<div class="container">
+			<div class="row">
+				<div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+					<div class="inner-column">
+						<div class="sec-title">
+							<span class="title">About Coders Club</span>
+							<h2>We are Creative Tech Enthusiast working since 2020</h2>
+						</div>
+						<div class="aboutText">
+							At The Coding Club, we are passionate about coding and technology. Our mission is to inspire and empower individuals to explore the world of programming, unleash their creativity, and harness the power of technology to make a positive impact. Whether you're a student, a professional, or simply curious about coding, our community welcomes you with open arms.
+						</div>
+						<div class="aboutText">
+							With a team of experienced mentors and enthusiasts, we provide a supportive and inclusive environment where learning thrives. We offer a diverse range of workshops, coding boot camps, and hands-on projects that cater to all skill levels. From the fundamentals of programming to cutting-edge technologies like machine learning and artificial intelligence, our programs are designed to equip our members with the knowledge and skills they need to thrive in the digital age.
+						</div>
+						<div class="btn-box">
+							<a href="{% url 'contact-home' %}" class="btn RegBtn"
+								>Contact Us</a
+							>
+						</div>
+					</div>
+				</div>
+
+				<!-- Image Column -->
+				<div class="image-column col-lg-6 col-md-12 col-sm-12">
+					<div class="inner-column wow fadeInLeft">
+						<div class="author-desc">
+							<h2>Coders Club 2023</h2>
+							<span>BTC Team</span>
+						</div>
+						<figure class="image-1">
+							<a href="home.html" class="lightbox-image" data-fancybox="images"
+								><img
+									title="BTC Team"
+									src="{{MEDIA_URL}}static-images/About/a1.jpg"
+									style="height: 543px; width: 425px"
+							/></a>
+						</figure>
+					</div>
+				</div>
+			</div>
+			<div class="sec-title" style="margin-top: 10px">
+				<span class="title">Our Future Goal</span>
+				<h2>We want to lead in innovation & Technology</h2>
+			</div>
+			<div >
+				<div class="aboutText">
+					We works on UI/UX and functionality as well so that a plugins comes
+					with proper stucture & stunning looks which suits to your web app &
+					website. We take a small toolkit here and ride it well so that it is fit for
+					your use. One who performs well and looks even better.
+				</div>
+				<div class="aboutText">
+					Here we are trying to give you all kinds of technical content, whether
+					it is related to designing or functionality. We are creating content
+					on a lot of languages and will continue to make it free of cost even
+					if you use it without any problem. Which is a very important thing.
+				</div>
+				<div class="aboutText">
+					Here you can also share the content you create, if our technical team
+					likes it, then we will also share it on our blog.
+				</div>
+				<div class="aboutText">
+					In the end, I would say keep visiting our website and enjoy the
+					quality content.
+				</div>
+			</div>
+			<img
+				class="aboutImg"
+				src="{{MEDIA_URL}}static-images/about/our_logo.jpg"
+				alt=""
+			/>
+
+			<div class="sec-title" style="margin-top: 50px">
+				<span class="title">Our Objectives</span>
+				<h2>
+					We Want to Train the Students According to the Present Technology
+				</h2>
+			</div>
+			<div>
+				<div class="aboutText">
+					We works on UI/UX and functionality as well so that a plugins comes
+					with proper stucture & stunning looks which suits to your web app &
+					website. We take a small toolkit here and ride it well so that it is fit for
+					your use. One who performs well and looks even better.
+				</div>
+				<div class="aboutText">
+					Here we are trying to give you all kinds of technical content, whether
+					it is related to designing or functionality. We are creating content
+					on a lot of languages and will continue to make it free of cost even
+					if you use it without any problem. Which is a very important thing.
+				</div>
+				<div class="aboutText">
+					Here you can also share the content you create, if our technical team
+					likes it, then we will also share it on our blog.
+				</div>
+				<div class="aboutText">
+					In the end, I would say keep visiting our website and enjoy the
+					quality content.
+				</div>
+			</div>
+			<img
+				class="aboutImg"
+				src="{{MEDIA_URL}}static-images/pageBlog/bp1.jpg"
+				alt=""
+			/>
+
+			<div class="sec-title" style="margin-top: 50px">
+				<span class="title">Our Aims</span>
+				<h2>The Place where You can make Your Future Bright</h2>
+			</div>
+			<div>
+				<div class="aboutText">
+					We works on UI/UX and functionality as well so that a plugins comes
+					with proper stucture & stunning looks which suits to your web app &
+					website. We take a small toolkit here and ride it well so that it is fit for
+					your use. One who performs well and looks even better.
+				</div>
+				<div class="aboutText">
+					Here we are trying to give you all kinds of technical content, whether
+					it is related to designing or functionality. We are creating content
+					on a lot of languages and will continue to make it free of cost even
+					if you use it without any problem. Which is a very important thing.
+				</div>
+				<div class="aboutText">
+					Here you can also share the content you create, if our technical team
+					likes it, then we will also share it on our blog.
+				</div>
+				<div class="aboutText">
+					In the end, I would say keep visiting our website and enjoy the
+					quality content.
+				</div>
+			</div>
+			<section class="Before_FooterAbout mb-4">
+				<div
+					class="home-content text-light position-absolute top-50 start-50 translate-middle"
+				>
+					<p id="before_footer_headingAbout">
+						Register Now and Apply for the Competitions !
+					</p>
+					<a href="{% url 'account-register' %}" class="btn RegBtn">Register</a>
+				</div>
+			</section>
+		</div>
+	</section>
+	{%endblock mainContent%}
+</body>

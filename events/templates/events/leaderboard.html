@@ -1,0 +1,517 @@
+{% extends "base.html" %} {% block cssLinksAndTitle %}
+<title>Leaderboard - Change Igniters</title>
+{% endblock cssLinksAndTitle %} {% block body %}
+<body>
+	{% endblock body %} {% block mainContent %}
+
+	<div id="leaderboard-body">
+		<section id="intro">
+			<div>
+				<div
+					id="HTML CSS JS"
+					class="mask d-flex align-items-center flex-column justify-content-center m-auto h-100"
+				>
+					<div class="mb-3 mt-5">
+						<select
+							class="select m-auto d-flex text-white"
+							id="Leaderboard-selector"
+						>
+							<option value="0">Show All</option>
+							<option value="1">HTML CSS JS</option>
+							<option value="2">Data Science</option>
+							<option value="3">AI Project</option>
+						</select>
+					</div>
+					<div class="container m-4" id="box-1">
+						<div class="row justify-content-center">
+							<div class="col-12">
+								<div class="card mask-custom">
+									<div class="card-body">
+										<div class="table-responsive">
+											<table class="table table-borderless text-white mb-0">
+												<thead>
+													<div class="text-center text-white fs-3">
+														HTML CSS JS
+													</div>
+												</thead>
+												<thead>
+													<tr>
+														<th scope="col" class="col-3 text-center">
+															POSITION
+														</th>
+														<th scope="col" class="col-6 align-baseline">
+															TEAM NAME
+														</th>
+														<th scope="col" class="col-4 align-baseline">
+															SHOW TEAM
+														</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th scope="row">1</th>
+														<td>Ignitors</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal4"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">2</th>
+														<td>Beast Coders</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal5"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">3</th>
+														<td>New Coders</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal1"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">4</th>
+														<td>Heavy</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal2"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">5</th>
+														<td>Unbeatable</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal3"
+															>Members</a
+														></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container m-4" id="box-2">
+						<div class="row justify-content-center">
+							<div class="col-12">
+								<div class="card mask-custom">
+									<div class="card-body">
+										<div class="table-responsive">
+											<table class="table table-borderless text-white mb-0">
+												<thead>
+													<div class="text-center text-white fs-3">
+														Data Science
+													</div>
+												</thead>
+												<thead>
+													<tr>
+														<th scope="col" class="col-3 text-center">
+															POSITION
+														</th>
+														<th scope="col" class="col-6 align-baseline">
+															TEAM NAME
+														</th>
+														<th scope="col" class="col-4 align-baseline">
+															SHOW TEAM
+														</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th scope="row">1</th>
+														<td>Lighting Stars</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal5"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">2</th>
+														<td>Binary Team</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal4"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">3</th>
+														<td>Tigers</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal3"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">4</th>
+														<td>AAMM Team</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal1"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">5</th>
+														<td>Webister</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal2"
+															>Members</a
+														></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container m-4" id="box-3">
+						<div class="row justify-content-center">
+							<div class="col-12">
+								<div class="card mask-custom">
+									<div class="card-body">
+										<div class="table-responsive">
+											<table class="table table-borderless text-white mb-0">
+												<thead>
+													<div class="text-center text-white fs-3">
+														AI Project
+													</div>
+												</thead>
+												<thead>
+													<tr>
+														<th scope="col" class="col-3 text-center">
+															POSITION
+														</th>
+														<th scope="col" class="col-6 align-baseline">
+															TEAM NAME
+														</th>
+														<th scope="col" class="col-4 align-baseline">
+															SHOW TEAM
+														</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th scope="row">1</th>
+														<td>Shining Stars</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal1"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">2</th>
+														<td>Bit Busters</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal2"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">3</th>
+														<td>Binary Beast</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal3"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">4</th>
+														<td>Smart Legends</td>
+														<td><a
+															href=""
+															data-bs-toggle="modal"
+															data-bs-target="#exampleModal4"
+															>Members</a
+														></td>
+													</tr>
+													<tr>
+														<th scope="row">5</th>
+														<td>A.I Web</td>
+														<td>
+															<a
+																href=""
+																data-bs-toggle="modal"
+																data-bs-target="#exampleModal5"
+																>Members</a
+															>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- modals -->
+	<div
+		class="modal modalJustify fade"
+		id="exampleModal1"
+		tabindex="-1"
+		aria-labelledby="exampleModalLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" style="padding: 30px">
+				<div class="modal-header">
+					<h1 class="modal-title text-center" id="exampleModalLabel">
+						Team Members
+					</h1>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					<div class="team-container">
+						<div class="team-member">
+							<h2>John Doe</h2>
+							<p>Front-end Developer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Jane Smith</h2>
+							<p>UI/UX Designer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Michael Johnson</h2>
+							<p>Full-stack Developer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Sarah Williams</h2>
+							<p>Project Manager</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="modal modalJustify fade"
+		id="exampleModal2"
+		tabindex="-1"
+		aria-labelledby="exampleModalLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" style="padding: 30px">
+				<div class="modal-header">
+					<h1 class="modal-title text-center" id="exampleModalLabel">
+						Team Members
+					</h1>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					<div class="team-container">
+						<div class="team-member">
+							<h2>John Smith</h2>
+							<p>Front-end Developer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Emily Johnson</h2>
+							<p>UX Designer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Michael Davis</h2>
+							<p>Full-stack Developer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Olivia Brown</h2>
+							<p>Graphic Designer</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="modal modalJustify fade"
+		id="exampleModal3"
+		tabindex="-1"
+		aria-labelledby="exampleModalLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" style="padding: 30px">
+				<div class="modal-header">
+					<h1 class="modal-title text-center" id="exampleModalLabel">
+						Team Members
+					</h1>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					<div class="team-container">
+						<div class="team-member">
+							<h2>Noah Clark</h2>
+							<p>Front-end Developer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Mia Lee</h2>
+							<p>UI/UX Designer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>James Rodriguez</h2>
+							<p> Software Engineer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Isabella Taylor</h2>
+							<p>Project Coordinator</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="modal modalJustify fade"
+		id="exampleModal4"
+		tabindex="-1"
+		aria-labelledby="exampleModalLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" style="padding: 30px">
+				<div class="modal-header">
+					<h1 class="modal-title text-center" id="exampleModalLabel">
+						Team Members
+					</h1>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					<div class="team-container">
+						<div class="team-member">
+							<h2>Alexander Turner</h2>
+							<p>QA Tester</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Ava Anderson</h2>
+							<p>UX Designer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Benjamin Martinez</h2>
+							<p>Software Engineer</p>
+						</div>
+
+						<div class="team-member">
+							<h2> Sophia Thompson</h2>
+							<p> Data Analyst</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="modal modalJustify fade"
+		id="exampleModal5"
+		tabindex="-1"
+		aria-labelledby="exampleModalLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" style="padding: 30px">
+				<div class="modal-header">
+					<h1 class="modal-title text-center" id="exampleModalLabel">
+						Team Members
+					</h1>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					<div class="team-container">
+						<div class="team-member">
+							<h2>Lucas Harris</h2>
+							<p>Mobile App Developer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Chloe Garcia</h2>
+							<p> Product Manager</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Michael Johnson</h2>
+							<p>Full-stack Developer</p>
+						</div>
+
+						<div class="team-member">
+							<h2>Sarah Williams</h2>
+							<p>Project Manager</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% endblock mainContent %}
+</body>

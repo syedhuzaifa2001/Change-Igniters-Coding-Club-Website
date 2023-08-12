@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% block cssLinksAndTitle %}
+<!-- swiper api -->
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+
+
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+<title>
+ Gallery - Change Igniters
+</title>
+<body id="gallerybody">
+ {% endblock cssLinksAndTitle %}
+{% block mainContent %}
+
+
+<div id="gallery">
+    <div class="gallery-home-content text-light position-absolute top-50 start-50 translate-middle">
+        <h1>Welcome to Change Igniters Gallery</h1>
+       
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+
+    <h1 class="text-center CompHeading mt-5">Competitions Glimps</h1>
+</div>
+{% for item in allgallery_post  %}
+<div class="gallery-album  text-center mt-2">
+    
+    <div class="gallery-cover">
+        <div class="gallery-cover-image" style="background: url('/media/{{item.cover_image}}') no-repeat center center/cover;"></div>
+        <div class="gallery-cover-text d-flex  align-item-center flex-column">
+            <h2 class="">{{item.event}}</h2>
+            <p class="fs-5">{{item.title}}</p>
+            <p class="fs-6">
+                {{item.second_title}}
+            </p>
+        </div>
+    </div>
+ 
+    <!-- image slider -->
+    <div class="image-slider">
+        <div class="slide-container swiper">
+            <div class="slide-content">
+                <div class="card-wrapper swiper-wrapper">
+                
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="/media/{{item.slider_image1}}" alt="" />
+                        </div>
+                    </div>
+                
+                 <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="/media/{{item.slider_image2}}" alt="" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="/media/{{item.slider_image3}}" alt="" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="/media/{{item.slider_image4}}" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <a href="galleryselected/{{item.Gallery_slug}}"
+                    ><button class="btn RegBtn mt-5" id="webbtn">
+                        View More
+                    </button></a>
+            </div>
+
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    
+</div>
+{% endfor %}
+<!--<div class="gallery-album text-center">
+    <div class="gallery-cover">
+        <div class="gallery-cover-image" style="background: url('./assets/images/gallery/cover2.jpg') no-repeat center center/cover;"></div>
+        <div
+            class="gallery-cover-text d-flex justify-content-center align-item-center flex-column"
+        >
+            <h2 class="fs-1">AI Competition</h2>
+            <p class="fs-5">Artificial Intelligence Competition</p>
+            <p class="fs-6">
+                Competition occur's between BCIT students of all batches
+            </p>
+        </div>
+    </div>
+
+     image slider 
+    <div class="image-slider">
+        <div class="slide-container swiper">
+            <div class="slide-content">
+                <div class="card-wrapper swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="./assets/images/gallery/1/22552382_313858025761839_158301743289750842_n.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="./assets/images/gallery/1/22554948_313857799095195_6803221063684629055_n.jpg" alt="" />
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="./assets/images/gallery/1/22688020_313857895761852_1275103569135825167_n.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="./assets/images/gallery/1/22688819_313857909095184_3666335847025112793_n.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <a href="./galleries/galleryAi.html"
+                    ><button class="btn RegBtn mt-3" id="aibtn">
+                        View More
+                    </button></a>
+            </div>
+
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+
+<div class="gallery-album text-center">
+    <div class="gallery-cover">
+        <div class="gallery-cover-image" style="background: url('./assets/images/gallery/cover.jpg') no-repeat center center/cover;"></div>
+        <div class="gallery-cover-text d-flex justify-content-center align-item-center flex-column">
+            <h2 class="fs-1">FlutterKode Competition</h2>
+            <p class="fs-5">A Mobile App Design and Development Competition</p>
+            <p class="fs-6">
+                Competition occur's between BCIT students of all batches
+            </p>
+        </div>
+    </div>
+
+     image slider 
+    <div class="image-slider">
+        <div class="slide-container swiper">
+            <div class="slide-content">
+                <div class="card-wrapper swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="./assets/images/gallery/2/26910043_350664188747889_6919095281839528634_o.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="./assets/images/gallery/2/26910987_350663575414617_8826677521954082244_o.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="./assets/images/gallery/2/26951766_350663965414578_6272184189032926802_o.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-card">
+                            <img src="./assets/images/gallery/2/26952432_350664852081156_4404150328393550558_o.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <a href="./galleries/galleryFlutter.html"
+                    ><button class="btn RegBtn mt-3" id="flutterbtn">
+                        View More
+                    </button></a>
+            </div>
+
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>-->
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+{% endblock mainContent %}
+
+{% block jsLinks %}
+ <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js">
+
+   
+ </script>
+ {% endblock jsLinks %}

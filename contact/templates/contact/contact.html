@@ -1,0 +1,158 @@
+{% extends "base.html" %} {% block cssLinksAndTitle %}
+<link
+  crossorigin="anonymous"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@500&amp;display=swap"
+  rel="stylesheet"
+/>
+<script
+  crossorigin="anonymous"
+  integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+></script>
+<title>Contact - Change Igniters</title>
+<body
+  style="
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(2 5 46),
+      rgb(179 203 255)
+    );
+  "
+>
+  {% endblock cssLinksAndTitle %} {% block mainContent %}
+  {% if success %}
+  <div id="myModalCont" class="modalCont">
+    <div class="modal-content-cont">
+      <img src="{{MEDIA_URL}}static-images/contactSection/gif1.gif" alt="" />
+      <p>Your message has been sent.</p>
+    </div>
+  </div>
+  {% endif %} 
+  <div class="Contact_Section mt-4">
+    <div class="contact-area section-padding" id="contact">
+      <div class="container">
+        <div class="section-title text-center">
+          <span> GET IN TOUCH </span>
+          <p>
+           
+            Whether you have questions, ideas, or want to join our community,
+            we're here to help. Fill out the form below and let's embark on a
+            coding journey together!
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="contact">
+              <form
+                action="{% url 'contact-home' %}"
+                class="form formContact"
+                method="post"
+                name="enq"
+                onsubmit="return ajaxpost()"
+              >
+                {% csrf_token %}
+                <div class="row formback">
+                  <div class="form-group col-md-6 my-3">
+                    <input
+                      class="form-control"
+                      name="name"
+                      placeholder="Name"
+                      required="required"
+                      type="text"
+                    />
+                  </div>
+                  <div class="form-group col-md-6 my-3">
+                    <input
+                      class="form-control"
+                      name="email"
+                      placeholder="Email"
+                      required="required"
+                      type="email"
+                    />
+                  </div>
+                  <div class="form-group col-md-12 my-3">
+                    <input
+                      class="form-control"
+                      name="subject"
+                      placeholder="Subject"
+                      required="required"
+                      type="text"
+                    />
+                  </div>
+                  <div class="form-group col-md-12 my-3">
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      placeholder="Your Message"
+                      required="required"
+                      rows="6"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12 text-center">
+                  <!-- <button class="btn btn-light" id="submitButton" name="submit" title="Submit Your Message!" type="submit" value="Send message">
+          Send Message
+         </button> -->
+                  <button type="submit" class="mx-4 RegBtn btn">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-5 sideContact">
+            <div class="single_address">
+              <i class="ri-map-pin-line"> </i>
+              <h4>Our Address</h4>
+              <p>
+                NED University Of Engineering and Technology, CSIT Department
+              </p>
+            </div>
+            <div class="single_address">
+              <i class="ri-mail-fill"> </i>
+              <h4>Send your message</h4>
+              <p>changeIgniters@gmail.com</p>
+            </div>
+            <div class="single_address">
+              <i class="ri-phone-fill"> </i>
+              <h4>Call us on</h4>
+              <p>(+92) 332-223-4010</p>
+            </div>
+            <div class="single_address">
+              <i class="ri-time-fill"> </i>
+              <h4>Work Time</h4>
+              <p>
+                Mon - Fri: 08.30 - 16.30.
+                <br />
+                Sat-Sun: OFF
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock mainContent %} {% block jsLinks %}
+  <script>
+    var contModal = document.getElementById("myModalCont");
+    var form = document.getElementById("formContact");
+
+    // Show the modal when the form is submitted
+    contModal.classList.add("showCont");
+
+    // Hide the modal after 4 seconds
+    setTimeout(function () {
+      contModal.classList.remove("showCont");
+    }, 3000);
+  </script>
+  {% endblock %}
+</body>

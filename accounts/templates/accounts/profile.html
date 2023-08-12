@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+{% block cssLinksAndTitle %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet"/>
+<title>
+ My Profile - Change Igniters
+</title>
+{% endblock cssLinksAndTitle %}
+
+{% block body %}
+<body style="  background-image:linear-gradient(to bottom right, rgb(175, 177, 180), rgb(225, 229, 236));"></body>
+ {% endblock body %}
+
+{% block mainContent %}
+    <div class="container">
+        <div class="main-body">        
+              <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                  <div class="card profileTopLeftCard">
+                    <div class="card-body innerProfile">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150"> -->
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                              <div class="circlePic">
+                                {% if request.user.profile.profile_picture %}
+                                <img class="profile-pic" src="{{request.user.profile.profile_picture.url}}">    
+                                {% else %}
+                                <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"/>
+                                {% endif %}
+                              </div>
+                              
+                           </div>
+                           <div class="col-md-6 mb-4"></div>
+                         </div>
+                        <div class="mt-2">
+                          <h4>{{request.user.profile.name}}</h4>
+                          <p class="text-secondary mb-1">{{request.user.profile.category}} Student</p>
+                          <p class="text-muted font-size-sm">{{ request.user.profile.department }} Department</p>                        
+                          <a href="{% url 'account-editprofile' %}" class="btn RegBtn">Edit Profile</a>
+                       <!-- <button class="btn btn-outline-primary">Message</button> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mt-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                          <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary mx-2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
+                          <span class="text-secondary">{{ request.user.profile.facebook_url }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github mr-2 icon-inline mx-2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>Github</h6>
+                            <span class="text-secondary">{{ request.user.profile.github_url }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap firstSoc">
+                          <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="mx-2"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></g></svg>LinkedIn</h6>
+                          <span class="text-secondary">{{ request.user.profile.linkedin_url }}</span>
+                        </li>
+                     
+                      
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Name</h6>
+                        </div>
+                        <div class="col-sm-9 privateUserName text-secondary">
+                          {{ request.user.profile.name }}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Employment Status</h6>
+                        </div>
+                        <div class="col-sm-9 privateEmploy text-secondary">
+                            {{ request.user.profile.employment_status }}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Contact Number</h6>
+                        </div>
+                        <div class="col-sm-9 privateContact text-secondary">
+                            {{ request.user.profile.contact_number }}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">City</h6>
+                        </div>
+                        <div class="col-sm-9 privateCity text-secondary">
+                          {{ request.user.profile.city }}
+                        </div>
+                      </div>
+                      <hr>
+                      
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Year</h6>
+                        </div>
+                        <div class="col-sm-9 privateBatch text-secondary">
+                          {{ request.user.profile.get_year }}
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 privateEmail text-secondary">
+                          {{ request.user.email }}
+                        </div>
+                      </div>
+                      <hr>
+                      <br>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <!-- <a class="btn RegBtn " target="__blank" href="EditProfile.html">Edit</a> -->
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+    
+                  <div class="row gutters-sm">
+                    <div class="col-sm-6 mb-3">
+                      <div class="card h-100">
+                        <div class="card-body">
+                            <div class="headingCard">
+                            <p><i class="material-icons text-info ">Past Comp.</i></p>
+                            <p class="ml-5" id="dateHeading">Date</p>    
+                        
+                    </div>
+                          <div class="statusDate">
+                            <small id="headStatus">Web Design</small>
+                            <p id="Date">12/12/2023</p>
+                          </div>
+                          
+                          <div class="mb-3" >
+                            <div class="smallBar"></div>
+                            <p id="result">Secured 1st position</p>
+                          </div>
+                          <div class="statusDate">
+                            <small id="headStatus">Web Design</small>
+                            <p id="Date">12/12/2023</p>
+                          </div>
+                          <div class="mb-3" >
+                            <div class="smallBar"></div>
+                            <p id="resultFail">Try Again</p>
+                          </div>
+                          <div class="statusDate">
+                            <small id="headStatus">Web Design</small>
+                            <p id="Date">12/12/2023</p>
+                          </div>
+                          <div class="mb-3" >
+                            <div class="smallBar"></div>
+                            <p id="result">Secured 1st position</p>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                      <div class="card h-100">
+                        <div class="card-body">
+                            <div class="headingCard">
+                            <p><i class="material-icons text-info Ongoing">Ongoing Comp.</i></p>
+                            <p class="ml-5" id="dateHeading">StartDate</p>    
+                        
+                    </div>
+                          <div class="statusDate">
+                            <small id="headStatus">Web Design</small>
+                            <p id="Date">12/12/2023</p>
+                          </div>
+                          
+                          <div class="mb-3" >
+                            <div class="smallBar"></div>
+                            <p id="resultF">Pending</p>
+                          </div>
+                          <div class="statusDate">
+                            <small id="headStatus">Web Design</small>
+                            <p id="Date">12/12/2023</p>
+                          </div>
+                          <div class="mb-3" >
+                            <div class="smallBar"></div>
+                            <p id="resultF">Pending</p>
+                          </div>
+                          <div class="statusDate">
+                            <small id="headStatus">Web Design</small>
+                            <p id="Date">12/12/2023</p>
+                          </div>
+                          <div class="mb-3" >
+                            <div class="smallBar"></div>
+                            <p id="resultF">Pending</p>
+                          </div>
+                          <div class="statusDate">
+                            <small id="headStatus">Web Design</small>
+                            <p id="Date">12/12/2023</p>
+                          </div>
+                          <div class="mb-3" >
+                            <div class="smallBar"></div>
+                            <p id="resultF">Pending</p>
+                          </div>                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>    
+                </div>
+              </div>    
+            </div>
+        </div>
+    
+{% endblock mainContent %}
+{% block jsLinks %}
+
+{% endblock jsLinks %}

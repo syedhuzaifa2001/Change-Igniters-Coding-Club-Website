@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block cssLinksAndTitle %}
+<link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet"/>
+<title>
+ Gallery - Change Igniters
+</title>
+<body id="gallerybody">
+ {% endblock cssLinksAndTitle %}
+{% block mainContent %}
+ 
+<div id="gallery">
+			
+
+    <div class="gallery-home-content text-light position-absolute top-50 start-50 translate-middle">
+        <h1>Welcome</h1>
+        <h1>Change Igniters Gallery</h1>
+    </div>
+</div>
+<div class="gallery-album text-center mt-4">
+    <div class="gallery-cover">
+        <div class="gallery-cover-image" style="background: url('/media/{{gallery_selected.cover_image}}') no-repeat center center/cover;"></div>
+        <div class="gallery-cover-text d-flex justify-content-center align-item-center flex-column">
+            <h2 class="fs-1">{{gallery_selected.event}}</h2>
+            <p class="fs-5">{{gallery_selected.title}}</p>
+            <p class="fs-6">
+                {{gallery_selected.second_title}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="view-more ai-album text-center">
+    <div class="pictures">
+      {% for img in galleryitem_post %}
+        <div class="pic-card">
+            <img src="/media/{{img.GalleryImage}}" alt="">
+        </div>
+    {% endfor %}
+    <!--    <div class="pic-card">
+            <img src="../assets/images/gallery/31934909_394063097741331_8956061205156331520_n.jpg" alt="">
+        </div>
+        <div class="pic-card">
+            <img src="../assets/images/gallery/31942272_394059871074987_4577586250134847488_n.jpg" alt="">
+        </div>
+        <div class="pic-card">
+            <img src="../assets/images/gallery/31944543_394060667741574_4633080766652219392_n.jpg" alt="">
+        </div>
+        <div class="pic-card">
+            <img src="../assets/images/gallery/31945520_394058234408484_8427946391443079168_n.jpg" alt="">
+        </div>
+        <div class="pic-card">
+            <img src="../assets/images/gallery/31946018_394058461075128_1335467089384701952_n.jpg" alt="">
+        </div>
+        <div class="pic-card">
+            <img src="../assets/images/gallery/31958843_394062911074683_7559312989816356864_n.jpg" alt="">
+        </div>
+        <div class="pic-card">
+            <img src="../assets/images/gallery/31958918_394059464408361_4517578886925516800_n.jpg" alt="">
+        </div>
+        <div class="pic-card">
+            <img src="../assets/images/gallery/1/22780424_313858035761838_5264443493818735410_n.jpg" alt="">
+        </div>-->
+    </div>
+</div>
+
+ {% endblock mainContent %}
+
+{% block jsLinks %}
+ <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js">
+ </script>
+ {% endblock jsLinks %}

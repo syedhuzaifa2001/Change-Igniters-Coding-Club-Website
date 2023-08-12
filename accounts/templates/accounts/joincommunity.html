@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+{% block cssLinksAndTitle %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+ <title>
+  Join Community - Change Igniters
+ </title>
+ {% endblock cssLinksAndTitle %}
+ {% block body %}
+ <body style="background-image:linear-gradient(to bottom right, rgb(175, 177, 180), rgb(225, 229, 236))">
+  {% endblock body %}
+{% block mainContent %}
+{% if success %}
+  <div id="myModalCont" class="modalCont">
+    <div class="modal-content-cont">
+      <img src="{{MEDIA_URL}}static-images/contactSection/gif1.gif" alt="" />
+      <p>Application submitted.</p>
+    </div>
+  </div>
+  {% endif %} 
+<div id="JoinComm-top">
+  <div
+    class="home-content text-light position-absolute top-50 start-50 translate-middle"
+  >
+    <h1 class="fs-1">Apply for the</h1>
+    <h1>Club's Membership!</h1>
+    <a href="#ClubSections" class="btn my-4 RegBtn">Join Now</a>
+</div>
+</div>
+  <!-- <div class="paraDivClub">
+    <h1>Heading</h1>
+    <p >Are you interested in learning how to code? Do you want to develop the skills needed to create websites and apps? Then our coding club is the perfect place for you!</p>
+      <h1>Heading</h1>
+        <p >So why wait? Join our coding club today and start your journey to becoming a skilled programmer! </p>
+        <h2>heading</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eligendi nobis placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa accusantium ipsam perferendis natus? At modi voluptatem perspiciatis ullam animi.</p>
+
+  </div> -->
+<div class="container ClubSections mt-6" id="ClubSections">
+ <!-- Community Form -->
+
+
+
+<div class="container  h-100" id="form">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col">
+      <div class="card card-registration MainForm my-4">
+        <div class="row g-0">
+          <div class="col-xl-12 Registration">
+            <form class="card-body p-md-5 text-black" method="post" action="{% url 'account-joincommunity' %}" onsubmit="return ajaxpost()">
+              {% csrf_token %}
+              <div class="Reg_flex ">
+
+                <div class="d-flex align-item-center justify-content-center"><img id="regLogo"  src="{{ MEDIA_URL }}static-images/Club/c10.png" alt=""></div>
+                <div class="form-heading mb-5 text-uppercase d-flex flex-wrap justify-content-center align-item-center text-center">JOIN OUR CLUB!</div>
+              </div>
+              <!-- radio button -->
+              <div class="row d-md-flex">
+                <div class="col-md-6 mb-4">                                      
+                        <div class="form-outline">
+                          <input type="url" name="portfolio_link" id="form3Example20" class="form-control formFiSize form-control-lg" placeholder="Portfolio Link"/>                        
+                      </div>
+            </div>
+            <div  class="col-md-6 mb-4 form-outline">
+              <select  name="domains" class="form-control formFiSize multi-select selectpicker" multiple aria-label="default select example" placeholder="Select Domain(s)"  data-live-search="true" required >
+                    {% for domain in domains %}
+                        <option   value="{{ domain.name }}">{{ domain.name }}</option>
+                    {% endfor %}            
+                </select>
+          </div>
+              </div>
+
+              <!-- individual or team selection -->
+              <div class="row">
+                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                    <h6 class="mb-0 me-4">Position: </h6>
+                    {% for position in positions %}
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input regRadio" type="radio" name="position" id="{{ position.name|slugify }}"
+                      value="{{ position.name }}" required />
+                      <label class="form-check-label" for="{{ position.name|slugify }}">{{ position.name }}</label>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input regRadio" type="radio" name="position" id="TeamMember"
+                    value="Team Member"/>
+                      <label class="form-check-label" for="TeamMember">Team Member</label>
+                    </div> -->
+                  </div>
+
+              </div>
+              
+
+              <div class="d-flex justify-content-end pt-3">
+                <button type="submit" class="btn RegBtn">Apply</button>
+              </div>
+            </div>
+
+            
+            </form>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+<div id="message" style="display: none;">
+    <div class="container py-5 h-100 communityContainer" >
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col">
+            <div class="card card-registration my-4">
+              <div class="row g-0">
+                <div class="col-xl-12 Registration">
+                  <form class="card-body p-md-5 text-black formCommunity" method="post"  onsubmit="return validation();">
+                    
+                   <h1 id="afterJoinCommHeading text-center">Your Form Has Been Submitted!</h1>
+                   <p id="afterJoinComm text-center">We will be in touch with you very soon!</p>
+                  
+                  </form>
+                  
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+    </div>
+</div>
+</div>
+  {% endblock mainContent %}
+{% block jsLinks %}
+<script>
+  const formCommunity = document.querySelector('.formCommunity');
+      const communityContainer = document.querySelector('.communityContainer');
+      const message = document.querySelector('#message');
+    
+      formCommunity.addEventListener('submit', (event) => {
+          event.preventDefault();// prevent default form submission
+          var name = $("#form3Example1m").val();
+          console.log(name);
+      // var email = $("#email").val();
+      // var message = $("#message").val();
+      // Here, you can add code to send the form data to a server using AJAX or fetch()
+      // After the form is submitted, display a message to the user
+  
+        // hide form and submit button
+        communityContainer.style.display = 'none';
+    
+        // display message
+        message.style.display = 'block';
+      //   message.textContent = 'Form submitted successfully!';
+      });
+  </script>
+  <script>
+    var text123 = document.getElementById('text123');
+  var newDom = '';
+  var animationDelay = 6;
+  console.log(text123);
+  for(let i = 0; i < text123.innerText.length; i++)
+  {
+      newDom += '<span class="char">' + (text123.innerText[i] == ' ' ? '&nbsp;' : text123.innerText[i])+ '</span>';
+  }
+  
+  text123.innerHTML = newDom;
+  var length = text123.children.length;
+  
+  for(let i = 0; i < length; i++)
+  {
+      text123.children[i].style['animation-delay'] = animationDelay * i + 'ms';
+  }
+  
+  var text1 = document.getElementById('text1');
+  var newDom = '';
+  var animationDelay = 20;
+  
+  for(let i = 0; i < text1.innerText.length; i++)
+  {
+      newDom += '<span class="char">' + (text1.innerText[i] == ' ' ? '&nbsp;' : text1.innerText[i])+ '</span>';
+  }
+  
+  text1.innerHTML = newDom;
+  var length = text1.children.length;
+  
+  for(let i = 0; i < length; i++)
+  {
+      text1.children[i].style['animation-delay'] = animationDelay * i + 'ms';
+  }
+  
+  var text2 = document.getElementById('text2');
+  var newDom = '';
+  var animationDelay = 30;
+  
+  for(let i = 0; i < text2.innerText.length; i++)
+  {
+      newDom += '<span class="char">' + (text2.innerText[i] == ' ' ? '&nbsp;' : text2.innerText[i])+ '</span>';
+  }
+  
+  text2.innerHTML = newDom;
+  var length = text2.children.length;
+  
+  for(let i = 0; i < length; i++)
+  {
+      text2.children[i].style['animation-delay'] = animationDelay * i + 'ms';
+  }
+  
+  
+  
+  </script>
+   <script>
+    var contModal = document.getElementById("myModalCont");
+    var form = document.getElementById("formContact");
+
+    // Show the modal when the form is submitted
+    contModal.classList.add("showCont");
+
+    // Hide the modal after 4 seconds
+    setTimeout(function () {
+      contModal.classList.remove("showCont");
+    }, 3000);
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+
+  {% endblock jsLinks %}

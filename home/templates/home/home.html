@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+{% block cssLinksAndTitle %}
+<title>
+ Change Igniters
+</title>
+<body>
+ {% endblock cssLinksAndTitle %}
+{% block mainContent %}
+  <div id="home-top">
+    <div class="home-content text-light position-absolute top-50 start-50 translate-middle">
+      <h6><a class=" text-decoration-none text-white">Change Igniters</a></h6>
+      <h1>Embrace change &</h1>
+      <h1>Innovate Together</h1>
+      <a href="{% url 'account-joincommunity' %}">
+        <button type="button" class="btn RegBtn mt-3">Join Our Club</button>
+      </a>
+    </div>
+  </div>
+<!-- rgb(42, 42, 150) previous colors of specific div -->
+  <div class="about my-4 py-4">
+
+    <h4 class=" text-center "><a class="text-color-theme text-decoration-none">About Us</a></h4>
+    <div class="d-flex  mx-auto flex-wrap">
+      <div id="left-about">
+        <h1 class="text-color-theme px-3">Unleash Your Coding  </h1>
+        <h1 class="text-color-theme px-3">Potential with Our Club!</h2>
+        <p class="text-color-theme px-3" >
+          Welcome to our coding club! We are a community of like-minded individuals who share a passion for technology and programming. Our goal is to provide a supportive and inclusive space for people of all skill levels to learn, practice, and collaborate on coding projects. Whether you're a seasoned developer or just starting out, we welcome you to join us on our journey to explore the vast world of computer programming. We offer regular meetings, workshops, and hackathons where members can learn new skills, share ideas, and work together on exciting projects. Come join us and discover the thrill of coding!
+        </p>
+        <a href="{% url 'about' %}">
+        <button type="button" class="btn RegBtn mx-3">About Us</button>
+        </a>
+      </div>
+      <div id="right-about">
+        <!-- <img  id="right-about-img1" src="{{ MEDIA_URL }}static-images/home/logo.png" alt="" /> -->
+        <img  id="right-about-img2" src="{{ MEDIA_URL }}static-images/home/ab1.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+  <br>
+<div class="smallLine"></div>
+<br>
+  <div class="events align-center my-3 py-4">
+    <h4 class="text-center pb-3"><a class="text-color-theme text-decoration-none">Our Events</a></h4>
+    <div class="event-body d-flex justify-content-center mx-auto flex-wrap">
+      {% for item in allgallery_post  %}
+      <div class="event-card" style="width: 18rem;">
+       <img alt="..." class="card-img-top" style="width: 80%;" src="/media/{{item.cover_image}}"/>
+       <div class="card-details">
+        <h5 class="text-title mt-3 card-title">
+         {{item.event}}
+        </h5>
+        <p class="text-body card-text mt-2">
+         {{item.title}}
+        </p>
+       </div>
+      </div>
+      {% endfor %}
+
+      <!-- <div class="event-card" style="width: 18rem;">
+        <img src="{{ MEDIA_URL }}static-images/home/home2.png" class="card-img-top" alt="...">
+        <div class="card-details">
+          <h5 class="text-title mt-3">FlutterKode</h5>
+          <p class="text-body">A competition of Flutter App Development</p>
+          
+        </div>
+      </div>
+      <div class="event-card" style="width: 18rem;">
+        <img src="{{ MEDIA_URL }}static-images/home/home1.jpg" class="card-img-top" alt="...">
+        <div class="card-details">
+          <h5 class="text-title mt-3">WebKode</h5>
+          <p class="text-body">A competition of Website Development</p>
+      
+        </div>
+      </div>
+      <div class="event-card" style="width: 18rem;">
+        <img src="{{ MEDIA_URL }}static-images/home/home4.jpg" class="card-img-top" alt="...">
+        <div class="card-details">
+          <h5 class="text-title mt-3">Speed Programming</h5>
+          <p class="text-body ">A competition of Flutter App Development</p>
+        </div>
+      </div> -->
+
+      <!-- for card reference -->
+      <!-- <div class="card">
+        <div class="card-details">
+          <p class="text-title">FlutterKode</p>
+          <p class="text-body">A competition of Flutter App Development</p>
+        </div>
+        <button class="card-button">More info</button>
+      </div> -->
+
+    </div>
+    <div class="d-flex justify-content-center pt-5 pb-4">
+      <a href="{% url 'events-home' %}"><button type="button" class="btn RegBtn ">More Events</button></a>
+    </div>
+  </div>
+  <br>
+  <div class="smallLine"></div>
+  <br>
+  <!-- blog section -->
+<!-- 
+  <section class="details-card">
+    <h6 class="text-primary text-center "><a class=" text-decoration-none">Our Blogs </a></h6>
+    <h3 class="text-black text-center my-5">Featured Blogs</h3>
+    <div class="container">
+      <div class="blog_cards d-flex justify-content-center align-item-center flex-wrap mb-0">
+        {% for post in blog_posts %}
+        <div class="card-hover">
+          <div class="card-hover__content">
+            <h3 class="card-hover__title">
+             <b>{{post.title}}</b>
+            </h3>
+            <p class="card-hover__text">{{post.content_summary| truncatechars:130}}</p>
+          </div>
+          <div class="card-hover__extra">
+
+          <a href="blogs/selected/{{post.sno}}" class="btn RegBtn card-hover__link">
+              <span>Read</span>
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+          <img src="/media/{{post.blog_image}}" alt="">
+        </div>
+        {% endfor %} 
+        <!- {% for post in blog_posts  %}
+     <div class="col-md-4 mb-4">
+     <div class="card-content">
+      <div class="card-img">
+       <img alt="" src="/media/{{post.blog_image}}"/>
+      </div>
+      <div class="card-desc">
+       <h3>
+        {{post.title}}
+       </h3>
+       <p>
+       {{post.content_summary| truncatechars:200}}
+       </p>
+       <a class="btn-card bg-primary" href="/blogs/selected/{{post.sno}}">
+        Read
+       </a>
+      </div>
+     </div>
+    </div>
+{% endfor %} 
+      </div>
+
+  </div>
+    <div class=" d-grid gap-2 col-2 mx-auto">
+      <button type="button" class="btn RegBtn">More Blogs</button>
+    </div>
+  </section> -->
+
+  <!-- our team section -->
+  <section class="our-webcoderskull my-3 py-4">
+    <h4 class="text-center  pb-3"><a class="text-color-theme text-decoration-none">Our Team</a></h4>
+    <div class="container">
+      <div class="row ourTeamRow heading heading-icon ">
+      </div>
+      <ul class="row">
+        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="https://media.licdn.com/dms/image/C4E03AQFhoVLmHofqcg/profile-displayphoto-shrink_200_200/0/1644742547951?e=1694044800&v=beta&t=0dbghJ-xcAtDJuKl9EKBOFEp8tDZv7aHaX3Rtf_xcNE"  class="img-responsive" alt=""></figure>
+            <h3><a href="{% url 'account-publicprofile' slug='kabirkaka' %}"">KABIR KAKA</a></h3>
+            <p>Front-end Web Developer</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/mohammad.kabir.51"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/muhammad-kabir-kaka/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              <li><a href="https://github.com/KabirKaka"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+            </ul>
+          </div> 
+        </li>
+        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="{{ MEDIA_URL }}static-images/home/huzaifa.jpg" class="img-responsive" alt=""></figure>
+            <h3><a href="{% url 'account-publicprofile' slug='huzefah' %}">Huzefah</a></h3>
+            <p>Front-end Web Developer</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/profile.php?id=100051360467258"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="http://www.linkedin.com/in/syed-muhammad-huzaifa-39b83b247"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              <li><a href="https://github.com/syedhuzaifa2001"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="https://media.licdn.com/dms/image/D4D03AQHlRoZ6yCJoNg/profile-displayphoto-shrink_200_200/0/1670649776457?e=1694044800&v=beta&t=v0keSykTzQZ857S5WLpz38hU0YUMIXy6kNsJH2C9wuE" class="img-responsive" alt=""></figure>
+            <h3><a href="{% url 'account-publicprofile' slug='ataibsaboor' %}">Ataib Saboor</a></h3>
+            <p>Back-end Web Developer</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/ataibsaboor04"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/ataibsaboor04/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              <li><a href="https://github.com/ataibsaboor04"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="{{ MEDIA_URL }}static-images/home/afnan-profile-pic.jpg" class="img-responsive" alt=""></figure>
+            <h3><a href="{% url 'account-publicprofile' slug='afnan' %}">Afnan ul Haq</a></h3>
+            <p>Back-end Web Developer</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/Afnan.ul.haq001"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <br>
+  <div class="smallLine"></div>
+  <br>
+  <!-- <div class="smallLine"></div> -->
+
+  <!-- FAQ section -->
+  <div class="faq my-4 pt-3">
+    <h6 class="text-center"><a class="text-color-theme text-decoration-none">FAQs</a></h6>
+    <div class="d-flex justify-content-evenly mx-auto flex-wrap">
+      <div id="left-faq">
+        <h4 class="text-color-theme">PEOPLE ASK</h4>
+        <div class="accordion faqAdjust" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Who can join Change Igniters' club?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+               <p>Change Igniters' club open to anyone with an interest in coding or programming. They may cater to various age groups and skill levels, from students and beginners to professionals and experienced coders. Some coding clubs may have specific requirements or target specific demographics, but many are inclusive and welcome anyone who wants to learn and engage with coding.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                What activities are typically conducted in Change Igniters' club?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+               <p>Change Igniters' club organizes a variety of activities to support learning and skill development. These can include coding challenges or competitions, group coding projects, workshops or tutorials on specific programming languages or concepts, guest lectures by industry professionals, and collaborative problem-solving sessions. Some coding clubs may also participate in coding hackathons, attend tech conferences, or invite guest speakers from the industry.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                How can joining Change Igniters' club benefit me?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse  collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body" >
+                <p>Joining Change Igniters' club can have several advantages. It provides a supportive and collaborative community where you can learn from others and enhance your coding skills. You can gain practical coding experience through hands-on projects and challenges. Coding clubs often foster networking opportunities, allowing you to connect with like-minded individuals, potential mentors, or even future employers. Additionally, being part of a coding club can enhance your problem-solving abilities, improve your understanding of programming concepts, and expose you to different programming languages and technologies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ {% endblock mainContent %}

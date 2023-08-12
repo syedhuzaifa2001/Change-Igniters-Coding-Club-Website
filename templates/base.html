@@ -1,0 +1,333 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="{% static 'styles.css' %}" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+  {% block cssLinksAndTitle %}{% endblock %}
+</head>
+{% block body %}{% endblock body %}
+  <header class="sticky-top">
+   {% if user.is_authenticated %}
+   <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+      <a class="navbar-brand color-primary link-light fs-4" href="{% url 'home' %}">
+       <img id="logo" src="{{ MEDIA_URL }}static-images/logo/logo.png" alt="" >
+      <!-- Change Igniters -->
+     </a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto mb-lg-0">
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'gallery-home' %}">
+         Gallery
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'events-home' %}">
+         Events
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'blogs-home' %}">
+         Blogs
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'account-joincommunity' %}">
+         Join
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'sponsors-home' %}">
+         Sponsors
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'contact-home' %}">
+         Contact
+        </a>
+       </li>
+      </ul>
+      {% if request.user.profile.profile_picture %}
+      <img class="user-pic" onclick="toggleMenu()" src="{{ request.user.profile.profile_picture.url }}"/>
+      {% else %}
+      <img class="user-pic" onclick="toggleMenu()" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"/>
+      {% endif %}
+
+      <div class="sub-menu-wrap" id="subMenu">
+       <div class="sub-menu">
+        <div class="user-info">         
+         <h6>
+          {{ request.user.profile.name }}
+         </h6>
+        </div>
+        <hr/>
+        <a class="sub-menu-link" href="{% url 'account-profile' %}">
+         <!-- <img alt="" src="{{ MEDIA_URL }}static-images/profile-menu/profile.png"/> -->
+         <p>
+          Profile
+         </p>
+         <span>
+          &gt;
+         </span>
+        </a>
+        <a class="sub-menu-link" href="{% url 'account-logout' %}">
+         <!-- <img alt="" src="{{ MEDIA_URL }}static-images/profile-menu/logout.png"/> -->
+         <p>
+          Logout
+         </p>
+         <span>
+          &gt;
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+   {% else %}
+   <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand color-primary link-light fs-4" href="{% url 'home' %}">
+        <img id="logo" src="{{ MEDIA_URL }}static-images/logo/logo.png" alt="" >
+      </a>
+     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon">
+      </span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto mb-lg-0">
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'gallery-home' %}">
+         Gallery
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'events-home' %}">
+         Events
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'blogs-home' %}">
+         Blogs
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'account-joincommunity' %}">
+         Join
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'sponsors-home' %}">
+         Sponsors
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link link-light underline-animated" href="{% url 'contact-home' %}">
+         Contact
+        </a>
+       </li>
+      </ul>
+      <div id="nav-buttons">
+        <a href="{% url 'account-register' %}">
+          <button class="btn btn-light mx-1" id="singup" type="button">
+            Signup
+          </button>
+        </a>
+        <a href="{% url 'account-login' %}">
+          <button class="btn btn-outline-light mx-1" id="login" type="button">
+            Login
+          </button>
+        </a>
+      </div>
+
+     </div>
+    </div>
+   </nav>
+   {% endif %}
+  </header>
+  <main>
+   {% block mainContent %}{% endblock %}
+  </main>
+  <footer>
+   <section class="footer-section">
+    <div class="container m-auto justify-content-center align-item-center">
+     <div class="row footer-section-row">
+      <div class="col-md-4">
+       <div class="address">
+        <div class="left-icon">
+         <img src="{{ MEDIA_URL }}static-images/icons/address.png"/>
+        </div>
+        <div class="right-text">
+         <h3>
+          Address
+         </h3>
+         <p>
+          NEDUET, CSIT
+         </p>
+         <p>
+          Karachi, Sindh, Pakistan -74016
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="address">
+        <div class="left-icon">
+         <img src="{{ MEDIA_URL }}static-images/icons/email.png"/>
+        </div>
+        <div class="right-text">
+         <h3>
+          Mail Id
+         </h3>
+         <p>
+          changeIgniters@gmail.com
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3">
+       <div class="address">
+        <div class="left-icon">
+         <img src="{{ MEDIA_URL }}static-images/icons/phone.png"/>
+        </div>
+        <div class="right-text">
+         <h3>
+          Phone
+         </h3>
+         <p>
+          +92 3322234010,
+         </p>
+         <p>
+          +92 3352811478
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-md-3">
+       <h3 class="footer-title">
+        <span class="footer-title-text">
+         Quick Link
+        </span>
+        <span class="footer-title-underline-animated text-decoration-none">
+        </span>
+       </h3>
+       <ul class="quick-link-list">
+        <li>
+         <a href="{% url 'gallery-home' %}">
+          Gallery
+         </a>
+        </li>
+        <li>
+         <a href="{% url 'events-home' %}">
+          Events
+         </a>
+        </li>
+        <li>
+         <a href="{% url 'blogs-home' %}">
+          Blogs
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="col-md-4">
+       <h3 class="footer-title title-transparent">
+        Quick Link
+       </h3>
+       <ul class="quick-link-list">
+        <li>
+         <a href="{% url 'account-joincommunity' %}">
+          Join Club
+         </a>
+        </li>
+        <li>
+         <a href="{% url 'sponsors-home' %}">
+          Sponsors
+         </a>
+        </li>
+        <li>
+         <a href="{% url 'contact-home' %}">
+          Contact
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="col-md-4">
+       <h3 class="footer-title">
+        <span class="footer-title-text">
+         Get Updates
+        </span>
+        <span class="footer-title-underline-animated text-decoration-none">
+        </span>
+       </h3>
+       <p class="newsletter">
+        Signup to Our Newsletter.
+       </p>
+       <form action="">
+        <div class="form-group">
+         <input class="form-control form-control-new" id="usr" name="username" placeholder="Enter Your Mail Id" type="text"/>
+        </div>
+        <button class="btn btn-outline-light subscribe pt-2" type="submit">
+         Subscribe
+        </button>
+       </form>
+       <div id="social">
+        <a href="https://www.facebook.com/btc.bring.the.change" target="_blank">
+         <img alt="" class="facebookBtn smGlobalBtn" src=""/>
+        </a>
+        <a href="">
+         <img alt="" class="linkedinBtn smGlobalBtn" src=""/>
+        </a>
+        <a href="">
+         <img alt="" class="twitterBtn smGlobalBtn" src=""/>
+        </a>
+        <a href="">
+         <img alt="" class="youtubeBtn smGlobalBtn" src=""/>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="footer-section-bottom">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-6 footer-bottom-left">
+       <p>
+        © All Rights Reserved Change Igniters
+       </p>
+      </div>
+      <div class="col-md-6 footer-bottom-right">
+       <p>
+        Developed by
+        <a href="https://www.facebook.com/btc.bring.the.change" target="_blank">
+         Team BTC
+        </a>
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+  </footer>
+
+  {% block jsLinks %}{% endblock %}
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="{% static 'javascript.js' %}"></script>
+</body>
+
+</html>

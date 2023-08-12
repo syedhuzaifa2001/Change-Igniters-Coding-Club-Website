@@ -1,0 +1,841 @@
+{% extends "base.html" %}
+{% block cssLinksAndTitle %}
+
+  <title>Events - Change Igniters</title>
+</head>
+
+{% endblock cssLinksAndTitle %}
+{% block body %}
+<body id="event-body">
+  {% endblock body %}
+
+{% block mainContent %}
+
+<div id="events-cover">
+  <div class="event-content text-center text-white position-absolute top-50 start-50 translate-middle"
+  >
+      <h1 class="m-0">Change Igniters</h1>
+      <h1 class="cover-text m-0" >Events</h1>
+      <div class=" justify-content-center d-flex mt-4">
+        <a href="{% url 'events-leaderboard' %}" class="btn RegBtn">VIEW LEADEROARD</a>
+    </div>
+  </div>
+</div>
+<div id="event-nav" class="sticky-top " >
+  <a href="#main-content" class="">LIVE</a>
+  <a href="#upcoming" class=" "> UPCOMING</a>
+  <a href="#previous" class=""> PREVIOUS</a>
+</div>
+<div id="main-content">
+<div class="d-flex flex-column">
+  <div id="live" class="d-flex justify-content-center align-item-center flex-column">
+      <div class="events-header">
+          <h5 class="m-auto">LIVE EVENTS</h5>
+          <hr />
+      </div>
+      <div id="live-events" class="my-4 d-flex justify-content-center d-flex flex-wrap">
+{% for event in events %}
+        <div class="event-challenge-card">
+              <div class="challenge-list-image event-challenge-card-wrapper">
+                  <div class="event-image" alt="Consensus 2023 Hackathon" style="
+        background-image: url('{{MEDIA_URL}}/static-images/events/e1.avif');
+      ">
+                      <div class="company-details">
+                          <div class="inline-block company-image" style="
+            background-image: url('https://media-fastly.hackerearth.com/media/companies/09c15d2-Coindesk_Logo_RGB.jpg');
+          "></div>
+          Change Igniters
+                      </div>
+                  </div>
+              </div>
+              <div class="challenge-content align-item-center">
+                  <div class="challenge-type">Live Event</div>
+                  <div class="challenge-name dark" title="Consensus 2023 Hackathon">
+                      <span class="challenge-list-title event-challenge-card-wrapper">{{event.name}}</span>
+                  </div>
+                  <div class="registrations-container align-item-center d-flex justify-content-center">
+                      <div class="registrations" title="Users Participating">
+                          <i class="fa fa-user"></i> 200
+                      </div>
+                  </div>
+                  <div class="challenge-list-meta event-challenge-card-wrapper">
+                      <div class="challenge-desc light">
+                          <div class="date date-countdown">
+                              <div
+                                  class="countdown d-flex justify-content-center align-item-center flex-column">
+                                  <div class="smaller light text-center text-danger">
+                                      ENDS IN
+                                  </div>
+                                  <div class="text-center timer" id="timer-event1">
+                                      <div id="days" class="inline-block">
+                                          <div id="days-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="days-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="days-text">Days</div>
+                                      </div>
+                                      <div id="hours" class="inline-block">
+                                          <div id="hours-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="hours-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="hours-text">Hours</div>
+                                      </div>
+                                      <div id="minutes" class="inline-block align-left">
+                                          <div id="minutes-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="minutes-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="minutes-text">Minutes</div>
+                                      </div>
+                                      <div id="seconds" class="inline-block align-left">
+                                          <div id="seconds-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="seconds-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="seconds-text">Seconds</div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="challenge-button justify-content-center d-flex mb-2">
+                  <button type="button" class="btn RegBtn" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                     DETAILS
+                    </button>
+              </div>
+          </div>
+{% endfor %}
+
+
+          <div class="event-challenge-card">
+              <div class="challenge-list-image event-challenge-card-wrapper">
+                  <div class="event-image" alt="Consensus 2023 Hackathon" style="
+        background-image: url('{{MEDIA_URL}}/static-images/events/e2.avif');
+      ">
+                      <div class="company-details">
+                          <div class="inline-block company-image" style="
+            background-image: url('https://media-fastly.hackerearth.com/media/companies/09c15d2-Coindesk_Logo_RGB.jpg');
+          "></div>
+                           Change Igniters
+                      </div>
+                  </div>
+              </div>
+              <div class="challenge-content align-item-center">
+                  <div class="challenge-type">Live Event</div>
+                  <div class="challenge-name dark" title="Consensus 2023 Hackathon">
+                      <span class="challenge-list-title event-challenge-card-wrapper">React JS Coding</span>
+                  </div>
+                  <div class="registrations-container align-item-center d-flex justify-content-center">
+                      <div class="registrations" title="Users Participating">
+                          <i class="fa fa-user"></i> 100
+                      </div>
+                  </div>
+
+                  <div class="challenge-list-meta event-challenge-card-wrapper">
+                      <div class="challenge-desc light">
+                          <div class="date date-countdown">
+                              <div
+                                  class="countdown d-flex justify-content-center align-item-center flex-column">
+                                  <div class="smaller light text-center text-danger">
+                                      ENDS IN
+                                  </div>
+                                  <div class="text-center timer" id="timer-event2">
+                                      <div id="days" class="inline-block">
+                                          <div id="days-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="days-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="days-text">Days</div>
+                                      </div>
+                                      <div id="hours" class="inline-block">
+                                          <div id="hours-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="hours-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="hours-text">Hours</div>
+                                      </div>
+                                      <div id="minutes" class="inline-block align-left">
+                                          <div id="minutes-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="minutes-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="minutes-text">Minutes</div>
+                                      </div>
+                                      <div id="seconds" class="inline-block align-left">
+                                          <div id="seconds-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="seconds-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="seconds-text">Seconds</div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="challenge-button justify-content-center d-flex mb-2">
+                  <button type="button" class="btn RegBtn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                      DETAILS
+                     </button>
+              </div>
+          </div>
+          <div class="event-challenge-card">
+              
+              <div class="challenge-list-image event-challenge-card-wrapper">
+                  <div class="event-image" alt="Consensus 2023 Hackathon" style="
+        background-image: url('{{MEDIA_URL}}/static-images/events/e3.avif');
+      ">
+                      <div class="company-details">
+                          <div class="inline-block company-image" style="
+            background-image: url('https://media-fastly.hackerearth.com/media/companies/09c15d2-Coindesk_Logo_RGB.jpg');
+          "></div>
+                           Change Igniters
+
+                      </div>
+                  </div>
+              </div>
+              <div class="challenge-content align-item-center">
+                  <div class="challenge-type">Live Event</div>
+                  <div class="challenge-name dark" title="Consensus 2023 Hackathon">
+                      <span class="challenge-list-title event-challenge-card-wrapper">App Development</span>
+                  </div>
+                  <div class="registrations-container align-item-center d-flex justify-content-center">
+                      <div class="registrations" title="Users Participating">
+                          <i class="fa fa-user"></i> 4180
+                      </div>
+                  </div>
+                  <div class="challenge-list-meta event-challenge-card-wrapper">
+                      <div class="challenge-desc light">
+                          <div class="date date-countdown">
+                              <div
+                                  class="countdown d-flex justify-content-center align-item-center flex-column">
+                                  <div class="smaller light text-center text-danger">
+                                      ENDS IN
+                                  </div>
+                                  <div class="text-center timer" id="timer-event3">
+                                      <div id="days" class="inline-block">
+                                          <div id="days-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="days-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="days-text">Days</div>
+                                      </div>
+                                      <div id="hours" class="inline-block">
+                                          <div id="hours-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="hours-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="hours-text">Hours</div>
+                                      </div>
+                                      <div id="minutes" class="inline-block align-left">
+                                          <div id="minutes-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="minutes-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="minutes-text">Minutes</div>
+                                      </div>
+                                      <div id="seconds" class="inline-block align-left">
+                                          <div id="seconds-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="seconds-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="seconds-text">Seconds</div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="challenge-button justify-content-center d-flex mb-2">
+                  <button type="button" class="btn RegBtn" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                      DETAILS
+                     </button>
+              </div>
+          </div>
+          <div class="event-challenge-card">
+              
+              <div class="challenge-list-image event-challenge-card-wrapper">
+                  <div class="event-image" alt="Consensus 2023 Hackathon" style="
+        background-image: url('{{MEDIA_URL}}/static-images/events/e4.avif');
+      ">
+                      <div class="company-details">
+                          <div class="inline-block company-image" style="
+            background-image: url('https://media-fastly.hackerearth.com/media/companies/09c15d2-Coindesk_Logo_RGB.jpg');
+          "></div>
+                           Change Igniters
+                      </div>
+                  </div>
+              </div>
+              <div class="challenge-content align-item-center">
+                  <div class="challenge-type">Live Event</div>
+                  <div class="challenge-name dark" title="Consensus 2023 Hackathon">
+                      <span class="challenge-list-title event-challenge-card-wrapper">Python Coding</span>
+                  </div>
+                  <div class="registrations-container align-item-center d-flex justify-content-center">
+                      <div class="registrations" title="Users Participating">
+                          <i class="fa fa-user"></i> 4180
+                      </div>
+                  </div>
+                  <div class="challenge-list-meta event-challenge-card-wrapper">
+                      <div class="challenge-desc light">
+                          <div class="date date-countdown">
+                              <div
+                                  class="countdown d-flex justify-content-center align-item-center flex-column">
+                                  <div class="smaller light text-center text-danger">
+                                      ENDS IN
+                                  </div>
+                                  <div class="text-center timer" id="timer-event4">
+                                      <div id="days" class="inline-block">
+                                          <div id="days-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="days-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="days-text">Days</div>
+                                      </div>
+                                      <div id="hours" class="inline-block">
+                                          <div id="hours-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="hours-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="hours-text">Hours</div>
+                                      </div>
+                                      <div id="minutes" class="inline-block align-left">
+                                          <div id="minutes-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="minutes-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="colon" class="inline-block large dark">
+                                              :
+                                          </div>
+                                          <div id="minutes-text">Minutes</div>
+                                      </div>
+                                      <div id="seconds" class="inline-block align-left">
+                                          <div id="seconds-1" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="seconds-0" class="inline-block large dark">
+                                              0
+                                          </div>
+                                          <div id="seconds-text">Seconds</div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="challenge-button justify-content-center d-flex mb-2">
+                  <button type="button" class="btn RegBtn" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                      DETAILS
+                     </button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- upcoming events -->
+  <div id="upcoming" class="d-flex justify-content-center align-item-center flex-column">
+      <div class="events-header">
+          <h5 class="m-auto">UPCOMING EVENTS</h5>
+          <hr />
+      </div>
+      <div id="upcoming-events" class="my-4 d-flex justify-content-center d-flex flex-wrap">
+          <div class="event-challenge-card">
+              <div class="challenge-list-image event-challenge-card-wrapper">
+                  <div class="event-image" alt="Consensus 2023 Hackathon" style="
+                  background-image: url('{{MEDIA_URL}}/static-images/events/e5.avif');
+              ">
+                      <div class="company-details">
+                          <div class="inline-block company-image" style="
+                          background-image: url('https://media-fastly.hackerearth.com/media/companies/09c15d2-Coindesk_Logo_RGB.jpg');
+                      "></div>
+                           Change Igniters
+                      </div>
+                  </div>
+              </div>
+              <div class="challenge-content align-item-center">
+                  <div class="challenge-type">Upcoming Event</div>
+                  <div class="challenge-name dark" title="Consensus 2023 Hackathon">
+                      <span class="challenge-list-title event-challenge-card-wrapper">Mega Project</span>
+                  </div>
+                  <div class="registrations-container align-item-center d-flex justify-content-center">
+                      <div class="registrations" title="Users Registered">
+                          <i class="fa fa-user"></i> 480
+                      </div>
+                  </div>
+                  <div class="challenge-list-meta event-challenge-card-wrapper">
+                      <div class="challenge-desc light">
+                          <div class="date date-countdown">
+                              <div
+                                  class="countdown d-flex justify-content-center align-item-center flex-column">
+                                  <div class="smaller light text-center text-danger">
+                                      STARTS ON
+                                  </div>
+                                  <div class="text-center" id="timer-event1">
+                                      <p class="upcoming-events-text">Apr 25, 05:30 PM PKT</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="challenge-button justify-content-center d-flex mb-2">
+                  <button type="button" class="btn RegBtn" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                      DETAILS
+                     </button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- previous events -->
+  <div id="previous" class="d-flex justify-content-center align-item-center flex-column">
+      <div class="events-header">
+          <h5 class="m-auto">PREVIOUS EVENTS</h5>
+          <hr />
+      </div>
+      <div id="previous-events" class="my-4 d-flex justify-content-center d-flex flex-wrap">
+          <div class="event-challenge-card">
+              
+              <div class="challenge-list-image event-challenge-card-wrapper">
+                  <div class="event-image" alt="Consensus 2023 Hackathon" style="
+                  background-image: url('{{MEDIA_URL}}/static-images/events/e6.avif');
+              ">
+                      <div class="company-details">
+                          <div class="inline-block company-image" style="
+                          background-image: url('https://media-fastly.hackerearth.com/media/companies/09c15d2-Coindesk_Logo_RGB.jpg');
+                      "></div>
+                           Change Igniters
+                      </div>
+                  </div>
+              </div>
+              <div class="challenge-content align-item-center">
+                  <div class="challenge-type">Previous Event</div>
+                  <div class="challenge-name dark" title="Consensus 2023 Hackathon">
+                      <span class="challenge-list-title event-challenge-card-wrapper">Html CSS JS</span>
+                  </div>
+                  <div class="registrations-container align-item-center d-flex justify-content-center">
+                      <div class="registrations" title="Users Participitated">
+                          <i class="fa fa-user"></i> 2180
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="challenge-button justify-content-center d-flex mb-2">
+                  <a href="{% url 'events-leaderboard' %}" class="btn RegBtn">VIEW LEADEROARD</a>
+              </div>
+          </div>
+          <div class="event-challenge-card">
+              
+              <div class="challenge-list-image event-challenge-card-wrapper">
+                  <div class="event-image" alt="Consensus 2023 Hackathon" style="
+                  background-image: url('{{MEDIA_URL}}/static-images/events/e7.avif');
+              ">
+                      <div class="company-details">
+                          <div class="inline-block company-image" style="
+                          background-image: url('https://media-fastly.hackerearth.com/media/companies/09c15d2-Coindesk_Logo_RGB.jpg');
+                      "></div>
+                           Change Igniters
+                      </div>
+                  </div>
+              </div>
+              <div class="challenge-content align-item-center">
+                  <div class="challenge-type">Previous Event</div>
+                  <div class="challenge-name dark" title="Consensus 2023 Hackathon">
+                      <span class="challenge-list-title event-challenge-card-wrapper">Data Science</span>
+                  </div>
+                  <div class="registrations-container align-item-center d-flex justify-content-center">
+                      <div class="registrations" title="Users Participitated">
+                          <i class="fa fa-user"></i> 40
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="challenge-button justify-content-center d-flex mb-2">
+                  <a href="{% url 'events-leaderboard' %}" class="btn RegBtn">VIEW LEADEROARD</a>
+              </div>
+          </div>
+          <div class="event-challenge-card">
+              
+              <div class="challenge-list-image event-challenge-card-wrapper">
+                  <div class="event-image" alt="Consensus 2023 Hackathon" style="
+                  background-image: url('{{MEDIA_URL}}/static-images/events/event1.jpg');
+              ">
+                      <div class="company-details">
+                          <div class="inline-block company-image" style="
+                          background-image: url('https://media-fastly.hackerearth.com/media/companies/09c15d2-Coindesk_Logo_RGB.jpg');
+                      "></div>
+                           Change Igniters
+                      </div>
+                  </div>
+              </div>
+              <div class="challenge-content align-item-center">
+                  <div class="challenge-type">Previous Event</div>
+                  <div class="challenge-name dark" title="Consensus 2023 Hackathon">
+                      <span class="challenge-list-title event-challenge-card-wrapper">AI Project</span>
+                  </div>
+                  <div class="registrations-container align-item-center d-flex justify-content-center">
+                      <div class="registrations" title="Users Participitated">
+                          <i class="fa fa-user"></i> 2080
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="challenge-button justify-content-center d-flex mb-2">
+                  <a href="{% url 'events-leaderboard' %}" class="btn RegBtn">VIEW LEADEROARD</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+    <!-- Modals -->
+    {% for event_copy in events_copy %}
+    <div class="modal modalJustify fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content" style="padding: 30px;">
+            <div class="modal-header">
+              <h1 class="modal-title " id="exampleModalLabel">{{event_copy.name}}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-6">
+                    <span class="headingModal">Total Participants : </span>
+                    <span ><b class="valuesModal" id="totalPart1">34</b></span>
+                </div>
+                <div class="col-6">
+                    <span class="headingModal">Last Date to Apply : </span>
+                    <span ><b class="valuesModal" id="venue1">12/02/2024</b></span>
+                </div>
+              </div> 
+              <hr> 
+              <div class="row  mt-4">
+                <div class="col12">
+                    <span class="headingModal">Full Details:</span>
+                   
+                    <p class="detailsModal mt-2">{{event_copy.description}}</p>
+                </div>
+              </div>           
+            </div>
+            <div class="modal-footer">
+              <a href="{% url 'events-apply' %}" type="button" class="btn RegBtn">Register Now</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="modal modalJustify fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content" style="padding: 30px;">
+            <div class="modal-header">
+              <h1 class="modal-title " id="exampleModalLabel">React JS</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-6">
+                    <span class="headingModal">Total Participants : </span>
+                    <span ><b class="valuesModal" id="totalPart2">34</b></span>
+                </div>
+                <div class="col-6">
+                    <span class="headingModal">Last Date to Apply : </span>
+                    <span ><b class="valuesModal" id="venue1">23/10/2023</b></span>
+                </div>
+              </div> 
+              <hr> 
+              <div class="row  mt-4">
+                <div class="col12">
+                    <span class="headingModal">Full Details:</span>
+                   
+                    <p class="detailsModal mt-2">Participating in a React JS coding competition can be a great learning opportunity for students to gain practical experience in building modern web applications. By participating, they can learn new skills and techniques, as well as get exposure to real-world development scenarios. Furthermore, competitions offer a chance for students to connect with other developers, mentors, and industry experts, which can provide valuable networking opportunities. Additionally, participating in a competition can help students to demonstrate their skills, build their resumes, and potentially win prizes or recognition, which can enhance their career prospects.</p>
+                </div>
+              </div>           
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'events-apply' %}" type="button" class="btn RegBtn">Register Now</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modalJustify fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content" style="padding: 30px;">
+            <div class="modal-header">
+              <h1 class="modal-title " id="exampleModalLabel">App Development</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-6">
+                    <span class="headingModal">Total Participants : </span>
+                    <span ><b class="valuesModal" id="totalPart3">34</b></span>
+                </div>
+                <div class="col-6">
+                    <span class="headingModal">Last Date to Apply :  </span>
+                    <span ><b class="valuesModal" id="venue1">01/05/2023</b></span>
+                </div>
+              </div> 
+              <hr> 
+              <div class="row  mt-4">
+                <div class="col12">
+                    <span class="headingModal">Full Details:</span>
+                   
+                    <p class="detailsModal mt-2">Participating in an app development competition can be an excellent opportunity for students to gain practical experience in developing mobile applications. By participating, they can learn new skills and techniques, as well as get exposure to real-world development scenarios. Competitions can also offer a chance for students to showcase their creativity and problem-solving skills, and potentially win prizes or recognition for their efforts. Moreover, participating in a competition can help students to build their resumes, demonstrate their ability to work under pressure and meet deadlines, and ultimately enhance their chances of success in their careers. Additionally, competitions may provide networking opportunities and allow students to connect with other developers, mentors, and industry experts.</p>
+                </div>
+              </div>           
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'events-apply' %}" type="button" class="btn RegBtn">Register Now</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modalJustify fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content" style="padding: 30px;">
+            <div class="modal-header">
+              <h1 class="modal-title " id="exampleModalLabel">Python Coding</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-6">
+                    <span class="headingModal">Total Participants : </span>
+                    <span ><b class="valuesModal" id="totalPart4">34</b></span>
+                </div>
+                <div class="col-6">
+                    <span class="headingModal">Last Date to Apply :  </span>
+                    <span ><b class="valuesModal" id="venue1">03/05/2023</b></span>
+                </div>
+              </div> 
+              <hr> 
+              <div class="row  mt-4">
+                <div class="col12">
+                    <span class="headingModal">Full Details:</span>
+                   
+                    <p class="detailsModal mt-2">Participating in a Python coding competition can be an excellent opportunity for students to learn new coding skills and gain practical experience in developing applications using Python. By participating, they can learn new techniques, problem-solving skills, and get exposure to real-world development scenarios. Competitions can also provide a platform for students to showcase their creativity, work collaboratively with other developers, and potentially win prizes or recognition for their efforts. Moreover, participating in a competition can help students to build their resumes, demonstrate their ability to work under pressure and meet deadlines, and ultimately enhance their chances of success in their careers. Additionally, competitions may offer networking opportunities and allow students to connect with other developers, mentors, and industry experts.</p>
+                </div>
+              </div>           
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'events-apply' %}" type="button" class="btn RegBtn">Register Now</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modalJustify fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content" style="padding: 30px;">
+            <div class="modal-header">
+              <h1 class="modal-title " id="exampleModalLabel">Mega Project</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-6">
+                    <span class="headingModal">Total Participants : </span>
+                    <span ><b class="valuesModal" id="totalPart5">NIL</b></span>
+                </div>
+                <div class="col-6">
+                    <span class="headingModal">Last date to Apply :  </span>
+                    <span ><b class="valuesModal" id="venue1">15/06/2023</b></span>
+                </div>
+              </div> 
+              <hr> 
+              <div class="row  mt-4">
+                <div class="col12">
+                    <span class="headingModal">Full Details:</span>
+                   
+                    <p class="detailsModal mt-2">Participating in a mega project can be an incredibly rewarding experience for students as it offers a chance to work on a large-scale project with a team of developers. By participating, students can gain valuable practical experience in project management, teamwork, and communication. Mega projects can also provide a platform for students to showcase their creativity, innovative ideas, and problem-solving skills. Furthermore, the project can be a valuable addition to their resume, demonstrating their ability to work on a complex project, and potentially lead to future career opportunities. Additionally, mega projects often involve industry experts and mentors, providing a unique opportunity for students to learn from and network with experienced professionals in the field.</p>
+                </div>
+              </div>           
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'events-apply' %}" type="button" class="btn RegBtn">Register Now</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {% endblock mainContent %}
+      
+      {% block jsLinks %}
+      <script>
+        // timer
+const createCounter = (date, event, button) => {
+	// Set the deadline date and time
+	var deadline = new Date(date);
+
+	// Update the timer every second
+	var x = setInterval(function () {
+		// Get the current date and time
+		var now = new Date().getTime();
+
+		// Calculate the time remaining between the deadline and the current date and time
+		var timeRemaining = deadline - now;
+
+		// Calculate the days, hours, minutes, and seconds remaining
+		var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+		var hours = Math.floor(
+			(timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+		);
+		var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+		// Update the HTML with the remaining time
+
+		event.innerHTML = `<div id="days" class="inline-block">
+											<div id="days-1" class="inline-block large dark">${days
+												.toString()
+												.charAt(0)}</div>
+											<div id="days-0" class="inline-block large dark">${days
+												.toString()
+												.charAt(1)}</div>
+											<div id="colon" class="inline-block large dark">:</div>
+											<div id="days-text">Days</div>
+										</div>
+										<div id="hours" class="inline-block">
+											<div id="hours-1" class="inline-block large dark">${hours
+												.toString()
+												.charAt(0)}</div>
+											<div id="hours-0" class="inline-block large dark">${hours
+												.toString()
+												.charAt(1)}</div>
+											<div id="colon" class="inline-block large dark">:</div>
+											<div id="hours-text">Hours</div>
+										</div>
+										<div id="minutes" class="inline-block align-left">
+											<div id="minutes-1" class="inline-block large dark">
+                      ${minutes.toString().charAt(0)}
+											</div>
+											<div id="minutes-0" class="inline-block large dark">
+                      ${minutes.toString().charAt(1)}
+											</div>
+											<div id="colon" class="inline-block large dark">:</div>
+											<div id="minutes-text">Minutes</div>
+										</div>
+										<div id="seconds" class="inline-block align-left">
+											<div id="seconds-1" class="inline-block large dark">
+                      ${seconds.toString().charAt(0)}
+											</div>
+											<div id="seconds-0" class="inline-block large dark">
+                      ${seconds.toString().charAt(1)}
+											</div>
+											<div id="seconds-text">Seconds</div>
+										</div>`;
+
+		// If the countdown is finished, display a message
+		if (timeRemaining < 0) {
+			clearInterval(x);
+			event.innerHTML = `<div class="text-15">
+    We are no longer accepting entries. Thank you for your generous interest.
+</div>`;
+			button.innerHTML = "";
+			// event.previousElementSibling.innerHTML = "";
+			event.previousElementSibling.style.visibility = "hidden";
+			// event.style.visibility = "hidden";
+		}
+	}, 1000);
+};
+
+live_events = document.getElementsByClassName("timer");
+live_events_buttons = document.getElementsByClassName("challenge-button");
+live_events_time = [
+	"2023-07-09T06:05:30",
+	"2023-07-14T06:05:30",
+	"2023-07-12T06:05:30",
+	"2023-07-14T23:59:59",
+	"2023-07-09T23:59:59",
+	"2023-07-12T23:59:59",
+];
+console.log(live_events_time)
+console.log(live_events_buttons)
+console.log(live_events)
+for (let index = 0; index < live_events.length; index++) {
+	createCounter(
+		live_events_time[index],
+		live_events[index],
+		live_events_buttons[index]
+	);
+}
+      </script>
+{% endblock jsLinks %}
